@@ -11,31 +11,49 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
     </head>
     <body>
-       
-        <div class="container1">
-            <div class="location">
-                <h2 class="locname" id="timezone">Ilam</h2>
-                <p id="latitude">Latitude</p>
-                <p id="longitude">Longitude</p>
-               </div>
-               <div class="weatherpic">
-                <img src="images/cold.png" alt="">
-               </div>
+        <div class="maincard">
+            <div class="card1">
+                <div class="container1">
+                    <div class="location">
+                        <h2 class="locname" id="timezone"></h2>
+                        <p id='weatherdesc'></p>
+                       </div>
+                
+                       <div class="weatherdesc">
+                        <img id="icon" src="" alt="">
+                     
+                       </div>
+                      
+                     
+        
+                </div>
+              <div class="container2">
+                <div class="temperature">
+                    <span id="temp"></span><span id="tempUnit">C</span>
 
+                   </div>
+            
+                   
+              
+               </div>
+               </div>
+               
+        
+               <!-- <div class="card">
+                    <div class="humidity">
+                        <p id="humidity"></p>
+                    </div>
+                    <div class="pressure">
+                        <p id="pressure"></p>
+                    </div>
+               </div> -->
         </div>
-      <div class="container2">
-        <div class="temperature">
-            <span id="temp"></span><span id="tempUnit">C</span>
-           </div>
-    
-           <div class="weatherdesc">
-            <p>It's freaking cold.</p>
-    
-      </div>
-      
-       </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src = "index.js"></script>
     </body>
 </html>

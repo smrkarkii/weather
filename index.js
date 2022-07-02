@@ -1,6 +1,4 @@
 window.addEventListener("load", () => {
-   let long;
-   let lat;
 
    if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(position => {
@@ -29,16 +27,30 @@ window.addEventListener("load", () => {
    }
 
    function showWeatherData(data){
-        let {humidity,temp, pressure, sunrise,sunset} = data.current;
+        let {humidity,temp, pressure} = data.current;
         let {timezone, lat, lon} = data;
+        let {description} = data.current.weather[0];
         console.log(lon);
+        $('#icon').attr("src","http://openweathermap.org/img/wn/"+data.current.weather[0].icon+"@2x.png");
+
         document.getElementById("timezone").innerHTML = timezone;
-        document.getElementById("longitude").innerHTML = lon;
-        document.getElementById("latitude").innerHTML = lat;
         document.getElementById("temp").innerHTML = temp;
-   }
+        // document.getElementById("humidity").innerHTML = "Humidity: " +humidity;
+        // document.getElementById("pressure").innerHTML = "Pressure: " +pressure;
+        document.getElementById("weatherdesc").innerHTML = capitalize(description); 
+       
+     }
+
+       
+   
 
    
 })
 
+//to capitalize first letter
+function capitalize(string){
+    const strings = string.charAt(0).toUpperCase() + string.slice(1);
+    return strings;
+
+}
 
