@@ -23,12 +23,43 @@ p{
    display: flex;
 }
 
-.container2{
-   
-}
+
 .maincard{
     display: flex;
     justify-content: center;
+}
+#search{
+    background-color: #091b3d;
+    text-align: center;
+    width: 300px;
+    height: 30px;
+    justify-content: center;
+    border: 2px solid grey;
+    /* color: green; */
+    font-size: 18px;
+    float: left;
+   
+}
+#searchbutton{
+    height: 35px;
+    margin-left: 3px;
+    background: none;
+}
+
+#searchbutton:hover{
+    background-color: grey;
+}
+
+.fa{
+    color:white;
+}
+
+.weatherdesc{
+    display: flex;
+    align-items: center;
+}
+input[type=text] , input::placeholder{
+    color: grey;
 }
 
 #weatherdesc{
