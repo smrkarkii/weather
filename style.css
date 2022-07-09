@@ -14,8 +14,12 @@ p{
 
 }
 
-.locname{
+.locname  {
     font-size: 3rem;
+}
+.errorMessage{
+    font-size: 3.5rem;
+    text-align: center;
 }
 
 
@@ -62,9 +66,10 @@ input[type=text] , input::placeholder{
     color: grey;
 }
 
-#weatherdesc{
-    font-size: 1.3rem;
-    color: #b7b0b0;
+#weatherdesc , #humidity{
+    font-size: 1.1rem;
+    color: #8f8a8a;
+    line-height: 0.9rem;
 }
 .card1{
     
