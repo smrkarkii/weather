@@ -26,23 +26,73 @@ window.addEventListener("load", () => {
     console.log("ERROR")
    }
 
-   function showWeatherData(data){
-        let {humidity,temp, pressure} = data.current;
+    function showWeatherData(data){
+        let {temp} = data.current;
         let {timezone, lat, lon} = data;
-        let {description} = data.current.weather[0];
+        let {description , } = data.current.weather[0];
+        let {humidity, pressure} = data.current;
         console.log(lon);
         $('#icon').attr("src","http://openweathermap.org/img/wn/"+data.current.weather[0].icon+"@2x.png");
 
         document.getElementById("timezone").innerHTML = timezone;
-        document.getElementById("temp").innerHTML = temp;
-        // document.getElementById("humidity").innerHTML = "Humidity: " +humidity;
-        // document.getElementById("pressure").innerHTML = "Pressure: " +pressure;
+        document.getElementById("temp").innerHTML = temp + "C";
+        document.getElementById("humidity").innerHTML = "Humidity: " +humidity +"%";
+        //document.getElementById("pressure").innerHTML = "Pressure: " +pressure;
+      
         document.getElementById("weatherdesc").innerHTML = capitalize(description); 
        
      }
 
+
+     document.querySelector("#searchbutton").addEventListener("click" , searchlocation);
+     
+     
+    function searchlocation() {
+         let search = document.getElementById("search").value;
+         console.log(search);
+         console.log("search button clicked");
+         const API_KEY = `7f11cdd7f1de8797d5aa63f1c9da4679`
+         const api =  `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${API_KEY}&units=metric`
+         fetch(api).then( response => {
+             return response.json();
+         })
+         
+         .then(data => {
+             console.log(data);
+             showWeatherDataByLocation(data);
+         })
+     }
+     
+     function showWeatherDataByLocation(data) {
+        let {name} = data;
+        if(name){
+            let {temp, humidity, pressure} = data.main;
+            temp = Math.ceil(temp)
+    
+            let {description} = data.weather[0];
+            $('#icon').attr("src","http://openweathermap.org/img/wn/"+data.weather[0].icon+"@2x.png");
+    
+            document.getElementById("timezone").innerHTML = name;
+            document.getElementById("temp").innerHTML = temp;
+             document.getElementById("humidity").innerHTML = "Humidity: " +humidity +"%";
+            // document.getElementById("pressure").innerHTML = "Pressure: " +pressure;
+            document.getElementById("weatherdesc").innerHTML = capitalize(description); 
+        }
+
+        else{
+            let error = data.message;
+            console.log(error);
+            errorMessage();
+            
+        }
        
-   
+       
+     }
+
+     function errorMessage(error){
+        location.href = "error.html"
+
+     }
 
    
 })
