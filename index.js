@@ -32,7 +32,7 @@ window.addEventListener("load", () => {
         let {timezone, lat, lon} = data;
         let {description , } = data.current.weather[0];
         let {humidity, pressure} = data.current;
-        console.log(lon);s
+        console.log(lon);
         $('#icon').attr("src","http://openweathermap.org/img/wn/"+data.current.weather[0].icon+"@2x.png");
 
         document.getElementById("timezone").innerHTML = timezone;
