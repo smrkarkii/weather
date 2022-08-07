@@ -1,5 +1,7 @@
-window.addEventListener("load", () => {
+import data from './json/city.list.json' assert {type :"JSON"};
 
+window.addEventListener("load", () => {
+    addOptions();
    if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(position => {
 
@@ -36,7 +38,7 @@ window.addEventListener("load", () => {
         $('#icon').attr("src","http://openweathermap.org/img/wn/"+data.current.weather[0].icon+"@2x.png");
 
         document.getElementById("timezone").innerHTML = timezone;
-        document.getElementById("temp").innerHTML = temp + " C";
+        document.getElementById("temp").innerHTML = temp + "°" +"C";
         document.getElementById("humidity").innerHTML = "Humidity: " +humidity +"%";
         //document.getElementById("pressure").innerHTML = "Pressure: " +pressure;
       
@@ -46,10 +48,17 @@ window.addEventListener("load", () => {
 
 
      document.querySelector("#searchbutton").addEventListener("click" , searchlocation);
-     
+     //enter key search 
+     $('#search').keypress(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+          searchlocation();
+        }
+      });
      
     function searchlocation() {
          let search = document.getElementById("search").value;
+         if(search != ''){
          console.log(search);
          console.log("search button clicked");
          const API_KEY = `7f11cdd7f1de8797d5aa63f1c9da4679`
@@ -62,8 +71,31 @@ window.addEventListener("load", () => {
              console.log(data);
              showWeatherDataByLocation(data);
          })
+        }
      }
      
+     //search function filter
+    //  function filterSearch(){
+    //     input =$("#search").value;
+    //     val = $("#dropdown").value;
+        
+
+
+
+    // }
+    function addOptions()
+    {
+         
+            var len = jsonData.length();
+            for(i =0; i< len; i++){
+            var city_list = jsonData[i].name;
+            $("#search-dropdown").append("<option value='" + city_list + "'" + ">" + city_list + "</option>")
+        }
+        }
+        
+     
+   
+    
      function showWeatherDataByLocation(data) {
         let {name} = data;
 
@@ -76,7 +108,7 @@ window.addEventListener("load", () => {
             $('#icon').attr("src","http://openweathermap.org/img/wn/"+data.weather[0].icon+"@2x.png");
     
             document.getElementById("timezone").innerHTML = name + "," + country;
-            document.getElementById("temp").innerHTML = temp + " C";
+            document.getElementById("temp").innerHTML = temp + "°" +"C";
              document.getElementById("humidity").innerHTML = "Humidity: " +humidity +"%";
             // document.getElementById("pressure").innerHTML = "Pressure: " +pressure;
             document.getElementById("weatherdesc").innerHTML = capitalize(description); 
@@ -97,6 +129,9 @@ window.addEventListener("load", () => {
 
      }
 
+     //go back page
+
+
    
 })
 
@@ -106,4 +141,5 @@ function capitalize(string){
     return strings;
 
 }
+
 

@@ -1,8 +1,8 @@
 body{
     margin:0;
     padding:0;
-    background-color: #04002d;
-    background-color:#110036;
+    background-color:#48484a;
+    background-color:#0a1a30;
     background-repeat:no-repeat;
     background-size: cover;
     color: white;
@@ -72,16 +72,17 @@ input[type=text] , input::placeholder{
     line-height: 0.9rem;
 }
 .card1{
-    
-    background-color:black;
     background: rgb(5,5,23);
-background: linear-gradient(90deg, rgba(5,5,23,1) 7%, rgba(3,2,32,1) 55%, rgba(4,12,51,1) 99%);
-    box-shadow: 0 0 3px 3px #071131;
+    background-color:#102542;
+
+/* background: linear-gradient(90deg, rgba(5,5,23,1) 7%, rgba(3,2,32,1) 55%, rgba(4,12,51,1) 99%); */
+    box-shadow: 0 0 3px 3px #102542;
     margin:5% 0 5% 5%;
     align-items: center;
     padding: 5%;
     width:500px;
     height: 300px;
+   
 }
 .temperature{
     font-size: 4rem;
@@ -93,8 +94,7 @@ background: linear-gradient(90deg, rgba(5,5,23,1) 7%, rgba(3,2,32,1) 55%, rgba(4
 }
 .card{
    
-    background-color: black;
-    background: rgb(5,5,23);
+    background-color: #102542;
     background: linear-gradient(90deg, rgba(5,5,23,1) 7%, rgba(3,2,32,1) 55%, rgba(4,12,51,1) 99%);
     box-shadow: 0 0 3px 3px grey;
     width:300px;
@@ -104,4 +104,18 @@ background: linear-gradient(90deg, rgba(5,5,23,1) 7%, rgba(3,2,32,1) 55%, rgba(4
     position: relative;
    right: -270px;
    
+}
+
+/* //error.html */
+.backbutton{
+    font-size: 1.2rem;
+    padding: 3%;
+    border-radius: 10px;
+    margin-left: 30px;
+    background-color:white;
+    color: black;
+    /* text-align: center; */
+}
+.backbutton:hover{
+    color:blue;
 }
