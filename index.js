@@ -1,4 +1,4 @@
-import data from './json/city.list.json' assert {type :"JSON"};
+import jsonData from './json/city.list.json' assert {type :"JSON"};
 
 window.addEventListener("load", () => {
     addOptions();
