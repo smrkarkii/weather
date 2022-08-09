@@ -75,20 +75,16 @@ window.addEventListener("load", () => {
      }
      
      //search function filter
-    function searchFilter(){
-        var len = jsonData.length;
-    var input = $("#search").value.toUpperCase();
-    opt = div.getElementByTagName("option");
-    for( i=0; i<opt.length; i++){
-        
-        text = opt[i].innerText.toUpperCase();
-        if(text.indexOf(input) >-1){
-            opt[i].style.display=""
+ function searchFilter(){
+        var keyword = document.getElementById("search").value.toUpperCase();
+        var select = document.getElementById("select");
+        for (var i = 0; i < select.length; i++) {
+            var txt = select.options[i].text.toUpperCase();
+            if (!txt.match(keyword)) {
+                $(select.options[i]).remove();
+            } 
+
         }
-        else{
-            opt[i].style.display = "none"
-        }
-    }
     }
 
 
