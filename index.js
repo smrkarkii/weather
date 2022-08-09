@@ -75,11 +75,21 @@ window.addEventListener("load", () => {
      }
      
      //search function filter
-    //  function filterSearch(){
-    //     input =$("#search").value;
-    //     val = $("#dropdown").value;
+    function searchFilter(){
+        var len = jsonData.length;
+    var input = $("#search").value.toUpperCase();
+    opt = div.getElementByTagName("option");
+    for( i=0; i<opt.length; i++){
         
-
+        text = opt[i].innerText.toUpperCase();
+        if(text.indexOf(input) >-1){
+            opt[i].style.display=""
+        }
+        else{
+            opt[i].style.display = "none"
+        }
+    }
+    }
 
 
     // }
@@ -89,6 +99,8 @@ window.addEventListener("load", () => {
             var len = jsonData.length;
             for(let i =0; i< len; i++){
             var city_list = jsonData[i].name;
+            console.log(jsonData[1].name)
+            console.log(len)
             $("#search-dropdown").append("<option value='" + city_list + "'" + ">" + city_list + "</option>")
         }
         }
