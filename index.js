@@ -1,4 +1,4 @@
-import jsonData from './json/city.list.json' assert {type :"JSON"};
+import jsonData from "./json/city.list.json" assert { type: "json" };
 
 window.addEventListener("load", () => {
     addOptions();
@@ -86,8 +86,8 @@ window.addEventListener("load", () => {
     function addOptions()
     {
          
-            var len = jsonData.length();
-            for(i =0; i< len; i++){
+            var len = jsonData.length;
+            for(let i =0; i< len; i++){
             var city_list = jsonData[i].name;
             $("#search-dropdown").append("<option value='" + city_list + "'" + ">" + city_list + "</option>")
         }
