@@ -44,6 +44,11 @@ p{
     float: left;
    
 }
+.select-class{
+    color:white;
+    background-color: black;
+}
+
 #searchbutton{
     height: 35px;
     margin-left: 3px;

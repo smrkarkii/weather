@@ -26,11 +26,14 @@
             <div class="card1">
                 <div class="container1">
                     <div class="location">
-                        <input id='search' type="text" placeholder="Search" onkeyup="filterSearch"> <i class="fa fa-solid fa-chevron-down"></i></input>
+                        <input id='search' type="text" placeholder="Search a city" list="cities" name="city" onkeyup="filterSearch"> <i class="fa fa-solid fa-chevron-down"></i> 
                         <button id ="searchbutton" type="submit"><i class="fa fa-search fa-2x"></i></button>
-                        <select id="search" multiple>
-
-                        </select>
+                        <datalist id="city-datalist">
+                            <option value="city1"></option>
+                            <option value="city1"></option>
+                            <option value="city1"></option>
+                        </datalist>
+                    </input>
                         <h2 class="locname" id="timezone"></h2>
                         <p id='weatherdesc'></p>
                         <p id='humidity'></p>
