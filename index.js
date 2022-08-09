@@ -83,8 +83,11 @@ window.addEventListener("load", () => {
         for (var i = 0; i < select.length; i++) {
             var txt = select.options[i].text.toUpperCase();
             if (!txt.match(keyword)) {
-                $(select.options[i]).remove();
+                $(select.options[i]).hide();
             } 
+            else{
+                $(select.options[i]).show();
+            }
 
         }
     }
