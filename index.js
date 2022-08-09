@@ -101,7 +101,8 @@ window.addEventListener("load", () => {
             for(let i =0; i< len; i++){
             var city_list = jsonData[i].name;
           
-            $("#search-dropdown").append("<option value='" + city_list + "'" + ">" + city_list + "</option>")
+            $("#search").append("<option value='" + city_list + "'" + ">" + city_list + "</option>")
+
         }
         }
         
