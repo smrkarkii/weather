@@ -75,11 +75,9 @@ window.addEventListener("load", () => {
      }
      
      //search function filter
-    //  function filterSearch(){
-    //     input =$("#search").value;
-    //     val = $("#dropdown").value;
-        
-     function searchFilter(){
+
+ function filterSearch(){
+
         var keyword = document.getElementById("search").value.toUpperCase();
         var select = document.getElementById("select");
         for (var i = 0; i < select.length; i++) {
@@ -99,6 +97,7 @@ window.addEventListener("load", () => {
             var len = jsonData.length;
             for(let i =0; i< len; i++){
             var city_list = jsonData[i].name;
+          
             $("#search-dropdown").append("<option value='" + city_list + "'" + ">" + city_list + "</option>")
         }
         }
