@@ -75,7 +75,7 @@ window.addEventListener("load", () => {
      }
      
      //search function filter
- function searchFilter(){
+ function filterSearch(){
         var keyword = document.getElementById("search").value.toUpperCase();
         var select = document.getElementById("select");
         for (var i = 0; i < select.length; i++) {
