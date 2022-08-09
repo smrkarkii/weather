@@ -79,7 +79,17 @@ window.addEventListener("load", () => {
     //     input =$("#search").value;
     //     val = $("#dropdown").value;
         
+     function searchFilter(){
+        var keyword = document.getElementById("search").value.toUpperCase();
+        var select = document.getElementById("select");
+        for (var i = 0; i < select.length; i++) {
+            var txt = select.options[i].text.toUpperCase();
+            if (!txt.match(keyword)) {
+                $(select.options[i]).remove();
+            } 
 
+        }
+    }
 
 
     // }
