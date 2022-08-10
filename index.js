@@ -94,13 +94,12 @@ window.addEventListener("load", () => {
 
 
     // }
-    function addOptions()
+    async function addOptions()
     {
          
-            var len = jsonData.length;
+            var len = await jsonData.length;
             for(let i =0; i< len; i++){
-            var city_list = jsonData[i].name;
-          
+            var city_list = await jsonData[i].name;
             $("#search").append("<option value='" + city_list + "'" + ">" + city_list + "</option>")
 
         }
