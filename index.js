@@ -1,4 +1,4 @@
-import jsonData from "./json/city.json" assert { type: "json" };
+// import jsonData from "./json/city.json" assert { type: "json" };
 
 window.addEventListener("load", () => {
     addOptions();
@@ -63,7 +63,8 @@ window.addEventListener("load", () => {
          console.log("search button clicked");
          const API_KEY = `7f11cdd7f1de8797d5aa63f1c9da4679`
          const api =  `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${API_KEY}&units=metric`
-         fetch(api).then( response => {
+         fetch(api).then( response => 
+            {
              return response.json();
          })
          
@@ -97,12 +98,20 @@ window.addEventListener("load", () => {
      function addOptions()
     {
          
-            var len = jsonData.length;
-            for(let i =0; i< len; i++){
-            var city_list =  jsonData[i].name;
-            $("#search").append("<option value='" + city_list + "'" + ">" + city_list + "</option>")
-
-        }
+            // var len = jsonData.length;
+            fetch('https://raw.githubusercontent.com/lutangar/cities.json/master/cities.json')
+            .then(result => {
+                return result.json()
+             })
+             .then(data => {
+                const len = data.length;
+                for(let i =0; i< len; i++){
+                    var city_list =  data[i].name;
+                    $("#search").append("<option value='" + city_list + "'" + ">" + city_list + "</option>")
+        
+                }
+             })
+           
         }
         
      
