@@ -108,6 +108,7 @@ window.addEventListener("load", () => {
                 for(let i =0; i< len; i++){
                     var city_list =  data[i].name;
                     $("#search").append("<option value='" + city_list + "'" + ">" + city_list + "</option>")
+                    console.log(city_list)
         
                 }
              })
