@@ -2,6 +2,7 @@
 
 window.addEventListener("load", () => {
     addOptions();
+    console.log("adding completed")
    if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(position => {
 
