@@ -53,6 +53,7 @@ p{
     height: 35px;
     margin-left: 3px;
     background: none;
+    border:none
 }
 
 #searchbutton:hover{
