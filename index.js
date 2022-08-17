@@ -1,7 +1,7 @@
 // import jsonData from "./json/city.json" assert { type: "json" };
 
 window.addEventListener("load", () => {
-    addOptions();
+    // addOptions();
     console.log("adding completed")
    if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(position => {
@@ -78,43 +78,43 @@ window.addEventListener("load", () => {
      
      //search function filter
 
- function filterSearch(){
+//  function filterSearch(){
 
-        var keyword = document.getElementById("search").value.toUpperCase();
-        var select = document.getElementById("select");
-        for (var i = 0; i < select.length; i++) {
-            var txt = select.options[i].text.toUpperCase();
-            if (!txt.match(keyword)) {
-                $(select.options[i]).hide();
-            } 
-            else{
-                $(select.options[i]).show();
-            }
+//         var keyword = document.getElementById("search").value.toUpperCase();
+//         var select = document.getElementById("select");
+//         for (var i = 0; i < select.length; i++) {
+//             var txt = select.options[i].text.toUpperCase();
+//             if (!txt.match(keyword)) {
+//                 $(select.options[i]).hide();
+//             } 
+//             else{
+//                 $(select.options[i]).show();
+//             }
 
-        }
-    }
+//         }
+//     }
 
 
     // }
-     function addOptions()
-    {
+    //  function addOptions()
+    // {
          
-            // var len = jsonData.length;
-            fetch('https://raw.githubusercontent.com/lutangar/cities.json/master/cities.json')
-            .then(result => {
-                return result.json()
-             })
-             .then(data => {
-                const len = data.length;
-                for(let i =0; i< len; i++){
-                    var city_list =  data[i].name;
-                    $("#search").append("<option value='" + city_list + "'" + ">" + city_list + "</option>")
-                    console.log(city_list)
+    //         // var len = jsonData.length;
+    //         fetch('https://raw.githubusercontent.com/lutangar/cities.json/master/cities.json')
+    //         .then(result => {
+    //             return result.json()
+    //          })
+    //          .then(data => {
+    //             const len = data.length;
+    //             for(let i =0; i< len; i++){
+    //                 var city_list =  data[i].name;
+    //                 $("#search").append("<option value='" + city_list + "'" + ">" + city_list + "</option>")
+    //                 console.log(city_list)
         
-                }
-             })
+    //             }
+    //          })
            
-        }
+    //     }
         
      
    
